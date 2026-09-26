@@ -407,26 +407,26 @@ docker compose down -v
 
 ---
 
-## ✦ Academic Compliance Summary
+## ✦ Academic Compliance Target Checklist
 
-This project was designed to satisfy a strict academic evaluation. The table below maps every mandatory requirement to its implementation:
+This project was designed to satisfy a strict academic evaluation. The table below maps every mandatory requirement to its *target* implementation (treat this as an architectural checklist rather than a verified external audit):
 
-| Requirement | Implementation | Key File(s) |
+| Requirement | Target Implementation | Key File(s) |
 |---|---|---|
-| 5 normalized tables with PKs | ✅ All 5 models with `primary_key=True` | `app/models/` |
-| Foreign Keys + CASCADE | ✅ All FKs with `ondelete="CASCADE"` | All model files |
-| NOT NULL + UNIQUE + CHECK | ✅ All constraints declared in ORM | `agent_config.py`, `workspace.py` |
-| INSERT operation | ✅ `POST /agents/` | `agent_service.create_agent()` |
-| SELECT operation | ✅ `GET /agents/` + `GET /workspaces/` | `list_agents()`, `list_workspaces()` |
-| UPDATE operation | ✅ `PATCH /agents/{id}` | `agent_service.update_agent()` |
-| DELETE with cascade | ✅ `DELETE /workspaces/{id}` | `workspace_service.delete_workspace()` |
-| 3-table JOIN + aggregations | ✅ `GET /analytics/model-report` | `analytics_service.py` |
-| Filtered search | ✅ Dashboard search + Analytics filters | `dashboard/page.tsx`, `analytics/page.tsx` |
-| Forms with validation | ✅ React Hook Form + Zod | `AddAgentModal.tsx`, `login/page.tsx` |
-| JWT Auth + RBAC | ✅ HS256 JWT + Admin/Standard roles | `core/security.py`, `api/deps.py` |
-| Glassmorphism UI | ✅ Custom Tailwind config + Framer Motion | `tailwind.config.ts`, `GlassCard.tsx` |
-| Docker deployment | ✅ 3-service Compose with health checks | `docker-compose.yml` |
-| Local LLM integration | ✅ httpx → Ollama `/api/generate` | `agent_service.execute_task_via_ollama()` |
+| 5 normalized tables with PKs | 🎯 All 5 models with `primary_key=True` | `app/models/` |
+| Foreign Keys + CASCADE | 🎯 All FKs with `ondelete="CASCADE"` | All model files |
+| NOT NULL + UNIQUE + CHECK | 🎯 All constraints declared in ORM | `agent_config.py`, `workspace.py` |
+| INSERT operation | 🎯 `POST /agents/` | `agent_service.create_agent()` |
+| SELECT operation | 🎯 `GET /agents/` + `GET /workspaces/` | `list_agents()`, `list_workspaces()` |
+| UPDATE operation | 🎯 `PATCH /agents/{id}` | `agent_service.update_agent()` |
+| DELETE with cascade | 🎯 `DELETE /workspaces/{id}` | `workspace_service.delete_workspace()` |
+| 3-table JOIN + aggregations | 🎯 `GET /analytics/model-report` | `analytics_service.py` |
+| Filtered search | 🎯 Dashboard search + Analytics filters | `dashboard/page.tsx`, `analytics/page.tsx` |
+| Forms with validation | 🎯 React Hook Form + Zod | `AddAgentModal.tsx`, `login/page.tsx` |
+| JWT Auth + RBAC | 🎯 HS256 JWT + Admin/Standard roles | `core/security.py`, `api/deps.py` |
+| Glassmorphism UI | 🎯 Custom Tailwind config + Framer Motion | `tailwind.config.ts`, `GlassCard.tsx` |
+| Docker deployment | 🎯 3-service Compose with health checks | `docker-compose.yml` |
+| Local LLM integration | 🎯 httpx → Ollama `/api/generate` | `agent_service.execute_task_via_ollama()` |
 
 ---
 

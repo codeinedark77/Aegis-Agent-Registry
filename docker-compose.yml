@@ -155,11 +155,11 @@ services:
     environment:
       NODE_ENV:            production
       PORT:                3000
-      # Runtime env (not baked — used by server-side code only)
-      NEXT_PUBLIC_API_URL: "${NEXT_PUBLIC_API_URL:-http://localhost:8000}"
+      # Note: NEXT_PUBLIC_API_URL is baked into the JS bundle at build time.
+      # Runtime environment variables here do not override client-side JS.
 
     ports:
-      - "0.0.0.0:3001:3000" # Map host 3001 to container 3000   # Publicly accessible
+      - "127.0.0.1:3001:3000" # Lock down to local loopback
 
     networks:
       - agentregistry-net
